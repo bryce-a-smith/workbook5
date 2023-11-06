@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="imageGroup.css" />
   </head>
   <body>
     <main>
@@ -15,13 +16,34 @@
         </div>
         <div class="row">
           <div class="col">
-            <img src="http://placehold.co/200" alt="" />
-          </div>
-          <div class="col">
-            <img src="http://placehold.co/200" alt="" />
+            <div class="imageGroup">
+              <img src="http://placehold.co/200"/>
+              <img src="http://placehold.co/200"/>
+            </div>
           </div>
         </div>
       </div>
     </main>
+    <script>
+      function init() {
+        const imgGroup = document.getElementsByClassName("imageGroup");
+        const allImgNoAlt = document.querySelectorAll("img:not([alt])");
+
+        Array.from(imgGroup).forEach((element) => {
+          element.style.border = "10px solid red";
+        });
+
+        Array.from(allImgNoAlt).forEach((element) => {
+            element.alt = "graffiti image";
+        });
+
+        const imgs =document.querySelectorAll("img[alt]")
+
+        Array.from(imgs).forEach((element) => {
+            element.style.border = "2px solid black";
+        })
+      }
+      window.onload = init;
+    </script>
   </body>
 </html>
