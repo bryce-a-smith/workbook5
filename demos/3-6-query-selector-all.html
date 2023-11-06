@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Images</title>
+  </head>
+  <body>
+    <main>
+      <h3>Images</h3>
+      <img src="https://placehold.co/300" alt="image 1" />
+      <img src="https://placehold.co/300" alt="image 2" />
+      <img src="https://placehold.co/300" alt="image 3" />
+      <img src="https://placehold.co/300" alt="image 4" />
+      <img src="https://placehold.co/300" alt="image 5" />
+      <img src="https://placehold.co/300" alt="image 6" />
+      <img src="https://placehold.co/300" alt="image 7" />
+    </main>
+    <script>
+        const images1 = document.getElementsByTagName("img");
+        const images2 = document.querySelectorAll("img");
+
+        for (const image of images2) {
+            image.style.border = "1px solid black";
+        }
+
+    </script>
+  </body>
+</html>
