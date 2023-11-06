@@ -39,8 +39,8 @@ let courses = [
 ];
 
 // When does the PROG200 course start?
-function getCourse(object) {
-  if (object.CourseId == "PROG200") {
+function getCourse(object, courseId) {
+  if (object.CourseId == courseId) {
     return true;
   } else {
     return false;
@@ -75,11 +75,17 @@ function getClasses(object) {
 }
 
 // When does the PROG200 course start?
-let course = courses.find(getCourse);
+let courseId = "PROG200";
+// let course = courses.find((course) => getCourse(course, courseId));
+let course = courses.find(function (course) {
+  return getCourse(course, courseId);
+});
 
 if (course != undefined) {
   console.log(course.StartDate);
 }
+
+console.log("---");
 
 // What is the title of the PROJ500 course?
 let course1 = courses.find(getCourse1);

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dynamic Images</title>
+  </head>
+  <body>
+    <main>
+      <h3>Images to See</h3>
+      <section>
+        <div class="container">
+          <div class="row">
+            <div class="col">
+              <select id="image-select">
+                <option value="">Select...</option>
+              </select>
+            </div>
+            <div class="col">
+              <button id="add-picture-button">Add Picture</button>
+              <button id="clear-pictures-button">Clear Pictures</button>
+            </div>
+          </div>
+          <div class="row">
+            <div id="image-div" class="col"></div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script>
+      let imageFiles = [
+        { name: "images/bob.jfif", description: "Spongebob" },
+        { name: "images/gary.jfif", description: "Gary" },
+        { name: "images/krabs.jfif", description: "Mr. Krabs" },
+        { name: "images/patrick.webp", description: "Patrick" },
+        { name: "images/plankton.jfif", description: "Plankton" },
+        { name: "images/sandy.jfif", description: "Sandy" },
+        { name: "images/Squidward_Tentacles.svg.png", description: "Squidward" },
+      ];
+
+      function init() {
+        const imageSelect = document.querySelector("#image-select");
+        const addPictureButton = document.querySelector("#add-picture-button");
+        const clearPicturesButton = document.querySelector("#clear-pictures-button");
+        const imageDiv = document.querySelector("#image-div");
+
+        function resetSelector() {
+          imageSelect.options.length = 0;
+
+          let selectOption = new Option("Select...", "");
+
+          imageSelect.appendChild(selectOption);
+        }
+
+        function clearPictures() {
+          let imagesDiv = document.querySelectorAll("div > img");
+
+          Array.from(imagesDiv).forEach((img) => {
+            imageDiv.removeChild(img);
+          });
+        }
+
+        function addPicture() {
+          let currentImage = document.createElement("img");
+          imageFiles.forEach((image) => {
+            if (imageSelect.value == image.description) {
+              currentImage.src = image.name;
+              currentImage.alt = image.description;
+              imageDiv.appendChild(currentImage);
+            }
+          });
+        }
+
+        function loadSelect() {
+          imageFiles.forEach((image) => {
+            let option = new Option(image.description, image.description);
+            imageSelect.appendChild(option);
+          });
+        }
+
+        addPictureButton.onclick = addPicture;
+        clearPicturesButton.onclick = clearPictures;
+
+        loadSelect();
+      }
+      window.onload = init;
+    </script>
+  </body>
+</html>
