@@ -38,7 +38,6 @@ let courses = [
   },
 ];
 
-
 // When does the PROG200 course start?
 function getCourse(object) {
   if (object.CourseId == "PROG200") {
@@ -59,21 +58,20 @@ function getCourse1(object) {
 
 // What are the titles of the courses that cost $50 or less?
 function getCourses1(object) {
-    if(object.Fee <= 50) {
-        return true;
-    } else {
-        return false;
-    }
+  if (object.Fee <= 50) {
+    return true;
+  } else {
+    return false;
+  }
 }
 
 // What classes meet in "Classroom 1"?
 function getClasses(object) {
-    if(object.Location == "Classroom 1") {
-        return true;
-    }
-    else {
-        return false;
-    }
+  if (object.Location == "Classroom 1") {
+    return true;
+  } else {
+    return false;
+  }
 }
 
 // When does the PROG200 course start?
@@ -83,13 +81,11 @@ if (course != undefined) {
   console.log(course.StartDate);
 }
 
-console.log();
-
 // What is the title of the PROJ500 course?
 let course1 = courses.find(getCourse1);
 
-if(course != undefined) {
-    console.log(course1.Title);
+if (course != undefined) {
+  console.log(course1.Title);
 }
 
 console.log();
@@ -97,10 +93,10 @@ console.log();
 // What are the titles of the courses that cost $50 or less?
 let courses1 = courses.filter(getCourses1);
 
-if(courses1 != undefined) {
-    for(const course of courses1) {
-        console.log(course.Title);
-    }
+if (courses1 != undefined) {
+  for (const course of courses1) {
+    console.log(course.Title);
+  }
 }
 
 console.log();
@@ -108,8 +104,8 @@ console.log();
 // What classes meet in "Classroom 1"?
 let classes = courses.filter(getClasses);
 
-if(classes != undefined) {
-    for(const class1 of classes) {
-        console.log(class1.Title);
-    }
+if (classes != undefined) {
+  for (const class1 of classes) {
+    console.log(class1.Title);
+  }
 }
