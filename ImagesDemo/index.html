@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Images Demo</title>
+    <link rel="stylesheet" href="roundedImg.css">
+  </head>
+  <body>
+    <main>
+      <section>
+        <div>
+          <img width="400rem" src="https://ichef.bbci.co.uk/news/976/cpsprodpb/005C/production/_95729000_gettyimages-53343187.jpg" />
+          <p>
+            Front facing toad. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eaque ducimus ullam sequi eius
+            enim qui fugiat nulla veritatis voluptatem distinctio, unde optio, ad tenetur ratione animi aperiam
+            aspernatur numquam vitae!
+          </p>
+
+          <img width="400rem" src="https://www.honoluluzoo.org/wp-content/uploads/Cane-Toad.jpg" />
+          <p>
+            Huge toad. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae hic architecto excepturi molestiae
+            laudantium nesciunt iusto voluptatum perspiciatis animi necessitatibus ducimus voluptatibus cumque, officia
+            dolorum quibusdam, veritatis repellat tenetur? Repudiandae.
+          </p>
+
+          <img width="400rem" src="https://i.pinimg.com/originals/73/5f/9e/735f9e236354d3c51be62ce55bdec964.jpg" />
+          <p>
+            Baby toad. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloribus sed quibusdam repellendus
+            tempore. Tempore architecto consequatur a, eum dolorum sint harum nesciunt pariatur, corporis sapiente
+            reprehenderit deleniti rerum provident ullam?
+          </p>
+        </div>
+      </section>
+    </main>
+    <script>
+        function init() {
+            const paragraphs = document.getElementsByTagName("p");
+            const images = document.getElementsByTagName("img");
+
+            Array.from(paragraphs).forEach((element) => {
+                element.style.border = "2px solid black"
+            })
+
+            Array.from(images).forEach((element) => {
+                element.classList.add("roundedImg");
+            })
+        }
+        window.onload = init;
+    </script>
+  </body>
+</html>
