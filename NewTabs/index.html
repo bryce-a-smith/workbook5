@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <button id="google-button">Google</button>
+        <button id="w3-button">w3schools</button>
+        <a href="images.html">Images</a>
+    </main>
+    <script>
+      function init() {
+        const googleButton = document.getElementById("google-button");
+        const w3Button = document.getElementById("w3-button");
+
+        function openGoogle() {
+            window.open("https://www.google.com/", "_self");
+        }
+
+        function openW3Schools() {
+            window.open("https://www.w3schools.com/", "_self");
+        }
+
+        googleButton.onclick = openGoogle;
+        w3Button.onclick = openW3Schools;
+
+      }
+
+      window.onload = init;
+    </script>
+</body>
+</html>

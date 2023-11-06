@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM</title>
+  </head>
+  <body>
+    <main>
+      <section>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos odio facere labore nemo pariatur
+          aspernatur deserunt explicabo tenetur odit beatae. Possimus voluptatibus quaerat aliquid id, tempore iure,
+          molestiae laudantium quis, ratione architecto numquam dignissimos at. Culpa, vero pariatur officia tempore
+          beatae asperiores sequi unde voluptatibus quod vel atque fugiat cupiditate totam nihil omnis odit sapiente
+          debitis exercitationem ipsam laudantium excepturi minus? Illo est dolores inventore nobis obcaecati blanditiis
+          fuga animi aliquam ut, atque libero id porro, vel numquam nam a! A cumque architecto ratione officia aperiam.
+          Corporis totam animi rerum nemo, molestiae minima non debitis consectetur laborum blanditiis aspernatur
+          voluptate.
+        </p>
+        <button id="open-button">Open</button>
+      </section>
+    </main>
+    <script>
+
+        const openButton = document.getElementById("open-button");
+
+
+        function changeBackgroundColor(params) {
+             document.body.style.backgroundColor = "yellow";
+        }
+       
+        setTimeout(changeBackgroundColor, 3000);
+
+        console.log(window.document.location.hostname);
+
+        console.log(window.navigator.userAgent);
+
+        function openPage() {
+            window.open("https://www.yearup.org/");
+        }
+
+        openButton.onclick = openPage;
+
+    </script>
+  </body>
+</html>
