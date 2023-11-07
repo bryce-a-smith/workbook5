@@ -4,13 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Images Demo</title>
-    <link rel="stylesheet" href="roundedImg.css">
+    <link rel="stylesheet" href="roundedImg.css" />
   </head>
   <body>
     <main>
       <section>
         <div>
-          <img width="400rem" src="https://ichef.bbci.co.uk/news/976/cpsprodpb/005C/production/_95729000_gettyimages-53343187.jpg" />
+          <button id="decorate-button">Decorate</button>
+          <br />
+          <img
+            width="400rem"
+            src="https://ichef.bbci.co.uk/news/976/cpsprodpb/005C/production/_95729000_gettyimages-53343187.jpg"
+          />
           <p>
             Front facing toad. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eaque ducimus ullam sequi eius
             enim qui fugiat nulla veritatis voluptatem distinctio, unde optio, ad tenetur ratione animi aperiam
@@ -34,19 +39,24 @@
       </section>
     </main>
     <script>
-        function init() {
-            const paragraphs = document.getElementsByTagName("p");
-            const images = document.getElementsByTagName("img");
+      function init() {
+        const paragraphs = document.getElementsByTagName("p");
+        const images = document.getElementsByTagName("img");
+        const decorateButton = document.querySelector("#decorate-button");
 
-            Array.from(paragraphs).forEach((element) => {
-                element.style.border = "2px solid black"
-            })
+        function decoratePage() {
+          Array.from(paragraphs).forEach((element) => {
+            element.style.border = "2px solid black";
+          });
 
-            Array.from(images).forEach((element) => {
-                element.classList.add("roundedImg");
-            })
+          Array.from(images).forEach((element) => {
+            element.classList.add("roundedImg");
+          });
         }
-        window.onload = init;
+
+        decorateButton.onclick = decoratePage;
+      }
+      window.onload = init;
     </script>
   </body>
 </html>
