@@ -44,17 +44,31 @@
         const images = document.getElementsByTagName("img");
         const decorateButton = document.querySelector("#decorate-button");
 
-        function decoratePage() {
-          Array.from(paragraphs).forEach((element) => {
-            element.style.border = "2px solid black";
-          });
+        let decorated = false;
 
-          Array.from(images).forEach((element) => {
-            element.classList.add("roundedImg");
-          });
+        function decorateElements() {
+          if (!decorated) {
+            Array.from(paragraphs).forEach((element) => {
+              element.style.border = "2px solid black";
+            });
+
+            Array.from(images).forEach((element) => {
+              element.classList.add("roundedImg");
+            });
+            decorated = true;
+          } else {
+            Array.from(paragraphs).forEach((element) => {
+              element.style.border = "none";
+            });
+
+            Array.from(images).forEach((element) => {
+              element.classList.remove("roundedImg");
+            });
+            decorated = false;
+          }
         }
 
-        decorateButton.onclick = decoratePage;
+        decorateButton.onclick = decorateElements;
       }
       window.onload = init;
     </script>
