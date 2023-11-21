@@ -38,10 +38,23 @@ let courses = [
   },
 ];
 
-function findCourse(course) {
-    return course.CourseId == "PROG100";
-}
+// function findCourse(course) {
+//     return course.CourseId == "PROG100";
+// }
 
-const course = courses.find(findCourse);
+// const course = courses.find(findCourse);
+
+//anonymous
+// let course = courses.find(function (course) {
+//   return course.CourseId == "PROG100";
+// });
+
+//arrow frunction
+// let course = courses.find((course) => {
+//   return course.CourseId == "PROG100";
+// });
+
+//one line arrow
+let course = courses.find((course) => course.CourseId == "PROG100");
 
 console.log(course);
