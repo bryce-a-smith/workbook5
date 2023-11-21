@@ -48,3 +48,17 @@ courses.sort((a, b) => {
 });
 
 console.log(courses);
+
+console.log("-----------");
+
+//backwards
+courses.sort((a, b) => {
+    a = a.Title.toUpperCase();
+    b = b.Title.toUpperCase();
+  
+    if (a > b) return -1;
+    else if (a == b) return 0;
+    else return 1;
+  });
+
+  console.log(courses);

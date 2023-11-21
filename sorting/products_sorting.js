@@ -16,3 +16,14 @@ products.sort((a, b) => {
 });
 
 console.log(products);
+
+console.log("-------\n");
+
+products.sort((a, b) => {
+    if (a.price > b.price) return -1;
+    else if (a.price == b.price) return 0;
+    else return 1;
+  });
+  
+  console.log(products);
+  
