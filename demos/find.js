@@ -57,6 +57,12 @@ let courses = [
 //one line arrow
 //predicate function
 //call back function
-let course = courses.find((course) => course.CourseId == "PROG100");
+// let course = courses.find((course) => course.CourseId == "PROG100");
+
+//c such that prog100 etc.
+// let course = courses.find((c) => c.CourseId == "PROG100");
+
+//don't need () around c
+let course = courses.find((c) => c.CourseId == "PROG100");
 
 console.log(course);
