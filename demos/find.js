@@ -55,6 +55,8 @@ let courses = [
 // });
 
 //one line arrow
+//predicate function
+//call back function
 let course = courses.find((course) => course.CourseId == "PROG100");
 
 console.log(course);
